@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import "./Navbar.css"
 import { FaFacebookF, FaUser, FaTwitter, FaInstagram, FaShoppingCart } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
@@ -51,19 +52,19 @@ const Navbar = () => {
             <div className="navigation-links">
               <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/product">Products</a></li>
+                <li><a href="/products">Products</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/about">About</a></li>
               </ul>
             </div>
             <div className="sidebar-menu">
                 <div className={`off-screen-menu ${isActive ? 'active' : ''}`}>
-                  <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">product</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">contact</a></li>
-                  </ul>
+                <ul>
+                  <li><Link to="/" onClick={handleToggle}>Home</Link></li>
+                  <li><Link to="/products" onClick={handleToggle}>Products</Link></li>
+                  <li><Link to="/about" onClick={handleToggle}>About</Link></li>
+                  <li><Link to="/contact" onClick={handleToggle}>Contact</Link></li>
+                </ul>
                 </div>
               </div>
           </div>
