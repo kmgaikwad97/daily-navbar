@@ -99,9 +99,6 @@ li {
     align-items: center;
 }
 
-/* Other CSS styles */
-
-
 /* Media query for screens below 768px */
 @media (max-width: 768px) {
 
