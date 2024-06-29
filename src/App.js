@@ -27,7 +27,7 @@ const App = () => {
       />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home bannerImage="put-imagelink" bannerHeading="Welcome" bannerSubHeading="Find Amazing Products Below" testContent="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />} />
+          <Route path="/" element={<Home bannerImage="https://images.pexels.com/photos/4553182/pexels-photo-4553182.jpeg" bannerHeading="Welcome" bannerSubHeading="This is the Title" testContent="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />} />
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

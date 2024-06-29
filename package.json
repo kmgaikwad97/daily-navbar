@@ -1,7 +1,15 @@
 {
   "name": "daily-navbar",
   "version": "0.1.0",
+  "description": "A responsive navbar with hamburger menu and background image for a React application.",
   "private": true,
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmgaikwad97/daily-navbar.git"
+  },
+  "author": "Kshitij Gaikwad",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

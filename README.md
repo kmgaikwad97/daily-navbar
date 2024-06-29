@@ -1,70 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+daily-navbar
+A customizable and responsive navbar component for React applications.
 
-In the project directory, you can run:
+This package provides a flexible navbar component that you can easily integrate into your React projects. It includes navigation links for Home, Products, About, and Contact pages, along with social icons and user icons.
 
-### `npm start`
+Installation
+You can install the package via npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm install daily-navbar
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Usage
+Importing Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from 'daily-navbar';
+import Home from './Components/Home/Home';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
+import Products from './Components/Products/Products';
+import "./App.css"
+import { FaFacebookF, FaUser, FaTwitter, FaInstagram, FaShoppingCart } from "react-icons/fa";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
-### `npm run build`
+const App = () => {
+  return (
+    <Router>
+      <Navbar
+        logo="MyLogo"
+        links={[
+          { path: "/", name: "Home" },
+          { path: "/products", name: "Products" },
+          { path: "/about", name: "About" },
+          { path: "/contact", name: "Contact" },
+        ]}
+        socialIcons={[FaFacebookF, FaTwitter, FaInstagram]}
+        userIcons={[FaMagnifyingGlass, FaShoppingCart, FaUser]}
+      />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home bannerImage="https://images.pexels.com/photos/4553182/pexels-photo-4553182.jpeg" bannerHeading="Welcome" bannerSubHeading="This is the Title" testContent="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default App;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Props
+logo: The logo to display in the navbar.
+links: An array of objects containing navigation links and their paths.
+socialIcons: An array of social icons (e.g., Facebook, Twitter).
+userIcons: An array of user icons (e.g., search, shopping cart, user profile).
+Example
+You can customize the navbar appearance, add your own icons, and adjust the layout to suit your project needs.
 
-### `npm run eject`
+Contributing
+Contributions are welcome! Feel free to submit issues and pull requests.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
