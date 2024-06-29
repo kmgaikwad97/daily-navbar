@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A responsive navbar with hamburger menu and background image for a React application.",
   "private": true,
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kmgaikwad97/daily-navbar.git"
