@@ -5,18 +5,16 @@ import "./Navbar.css";
 // import { FaFacebookF, FaUser, FaTwitter, FaInstagram, FaShoppingCart } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
-const Navbar = ({ logo, links, socialIcons, userIcons, fixed = true, layout = 'block' }) => {
+const Navbar = ({ logo, links, socialIcons, userIcons }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleToggle = () => {
     setIsActive(!isActive);
   };
 
-  const navbarClass = `navbar-container ${fixed ? 'fixed' : ''} ${layout}`;
-
   return (
     <nav>
-      <div className={navbarClass}>
+      <div className="navbar-container">
         <div className="navbar-top">
           <div className="social-icons">
             {socialIcons.map((Icon, index) => (
@@ -71,8 +69,6 @@ Navbar.propTypes = {
   })).isRequired,
   socialIcons: PropTypes.arrayOf(PropTypes.elementType).isRequired,
   userIcons: PropTypes.arrayOf(PropTypes.elementType).isRequired,
-  fixed: PropTypes.bool,
-  layout: PropTypes.oneOf(['block', 'flex']),
 };
 
 export default Navbar;
